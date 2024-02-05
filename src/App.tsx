@@ -8,7 +8,9 @@ function App() {
         id={1}
         title="Learn TS"
         description="Crash course for learning TS"
-      />
+      >
+        Start at : Monday
+      </CourseGoal>
     </main>
   );
 }
