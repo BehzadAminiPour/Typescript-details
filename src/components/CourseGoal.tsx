@@ -7,7 +7,8 @@ type CourseGoalProps = {
   children: ReactNode;
 };
 
-//An alternative way using typescript
+//**An alternative way using typescript**//
+// import { FC } from "react";
 // import { PropsWithChildren } from "react";
 
 // type CourseGoalProps = PropsWithChildren<{
@@ -34,3 +35,28 @@ const CourseGoal = ({ title, description, id, children }: CourseGoalProps) => {
 };
 
 export default CourseGoal;
+
+//**An alternative way of typing components */
+// const CourseGoal: FC<CourseGoalProps> = ({
+//   id,
+//   title,
+//   description,
+//   children,
+// }) => {
+//   return (
+//     <article>
+//       <div>
+//         <h2>
+//           {id}-{title}
+//         </h2>
+//         <p>{description}</p>
+//         <p>{children}</p>
+//       </div>
+//       <button className="p-1 bg-red-500 text-slate-50 rounded-md px-2 mt-2">
+//         Delete
+//       </button>
+//     </article>
+//   );
+// };
+
+// export default CourseGoal;
