@@ -1,13 +1,11 @@
-import axios from "axios";
-
-const url = "https://jsonplaceholder.typicode.com/users/1";
+import CourseGoal from "./components/CourseGoal";
 
 function App() {
-  axios.get(url).then((response) => console.log(response.data));
   return (
-    <>
-      <h1>Hello typescript</h1>
-    </>
+    <main className="max-w-4xl mx-auto">
+      <h1 className="text-blue-500">Hello typescript</h1>
+      <CourseGoal />
+    </main>
   );
 }
 
