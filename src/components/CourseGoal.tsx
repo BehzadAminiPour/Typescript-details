@@ -1,13 +1,12 @@
 import { type ReactNode } from "react";
 // using type before ReactNode is a good practice
 type CourseGoalProps = {
-  id: number;
   title: string;
   description: string;
   children: ReactNode;
 };
 
-//**An alternative way using typescript**//
+//**An alternative way to use typescript**//
 // import { FC } from "react";
 // import { PropsWithChildren } from "react";
 
@@ -17,13 +16,11 @@ type CourseGoalProps = {
 //   description: string;
 // }>;
 
-const CourseGoal = ({ title, description, id, children }: CourseGoalProps) => {
+const CourseGoal = ({ title, description, children }: CourseGoalProps) => {
   return (
     <article>
       <div>
-        <h2>
-          {id}-{title}
-        </h2>
+        <h2>{title}</h2>
         <p>{description}</p>
         <p>{children}</p>
       </div>

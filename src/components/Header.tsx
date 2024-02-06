@@ -8,7 +8,7 @@ type HeaderProps = {
 const Header = ({ image, children }: HeaderProps) => {
   return (
     <>
-      <img {...image} />
+      <img className="w-48" {...image} />
       {children}
     </>
   );
