@@ -1,9 +1,11 @@
 import { type ReactNode } from "react";
 // using type before ReactNode is a good practice
 type CourseGoalProps = {
+  id: number;
   title: string;
   description: string;
   children: ReactNode;
+  onDelete: (id: number) => void;
 };
 
 //**An alternative way to use typescript**//
@@ -16,7 +18,13 @@ type CourseGoalProps = {
 //   description: string;
 // }>;
 
-const CourseGoal = ({ title, description, children }: CourseGoalProps) => {
+const CourseGoal = ({
+  id,
+  title,
+  description,
+  children,
+  onDelete,
+}: CourseGoalProps) => {
   return (
     <article>
       <div>
@@ -24,7 +32,10 @@ const CourseGoal = ({ title, description, children }: CourseGoalProps) => {
         <p>{description}</p>
         <p>{children}</p>
       </div>
-      <button className="p-1 bg-red-500 text-slate-50 rounded-md px-2 mt-2">
+      <button
+        onClick={() => onDelete(id)}
+        className="p-1 bg-red-500 text-slate-50 rounded-md px-2 mt-2"
+      >
         Delete
       </button>
     </article>
