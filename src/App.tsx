@@ -15,12 +15,12 @@ function App() {
   //**Another way to define */
   // const [goals, setGoals] = useState<Array<CourseGoal>([]);
 
-  const handleAddGoal = () => {
+  const handleAddGoal = (goal: string, summary: string) => {
     setGoals((prevGoals) => {
       const newGoals: CourseGoal = {
         id: Math.random(),
-        title: "Typescript",
-        description: "Learn typescript in depth!",
+        title: goal,
+        description: summary,
       };
       return [...prevGoals, newGoals];
     });
@@ -35,7 +35,7 @@ function App() {
       <Header image={{ src: goalsImg, alt: "An image of goals" }}>
         <h1>Your Course Goals</h1>
       </Header>
-      <NewGoal />
+      <NewGoal onAddGoal={handleAddGoal} />
       <CourseGoalList goals={goals} onDeleteGoal={handleDelete} />
     </main>
   );
